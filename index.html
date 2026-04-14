@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Шопперы оптом </title>
+    <title>Шопперы оптом | PMR</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -191,7 +191,18 @@
             letter-spacing: 0.5px;
             color: #1a5780;
             box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-            cursor: default;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .premium-btn:hover {
+            background: #e5f0fd;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        body.dark .premium-btn:hover {
+            background: #1f3450;
         }
 
         /* кнопка тёмной темы */
@@ -223,11 +234,11 @@
             background: #2f4e72;
         }
 
-        /* Hero секция */
+        /* Hero секция 16:9 */
         .hero-premium {
             background: linear-gradient(135deg, #f0f7ff 0%, #e5f0fe 100%);
             width: 100%;
-            aspect-ratio: 16 / 5.5;
+            aspect-ratio: 16 / 9;
             margin: 18px 0 32px;
             border-radius: 28px;
             border: 1px solid #cddef0;
@@ -253,7 +264,7 @@
             color: #88b6dc;
         }
 
-        /* ----- ВЕРТИКАЛЬНЫЕ КАРТОЧКИ 4:3 (высота больше ширины) ----- */
+        /* ----- ВЕРТИКАЛЬНЫЕ КАРТОЧКИ 3:4 (само окно карточки 3:4) ----- */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -261,14 +272,14 @@
             margin: 30px 0 40px;
         }
 
-        /* aspect-ratio 4:3 — вертикальные окна (высота = ширина * 1.333) */
+        /* aspect-ratio 3:4 — вертикальные окна (высота больше ширины) */
         .product-card {
             background: #ffffff;
             border-radius: 24px;
             padding: 20px 18px 20px;
             box-shadow: 0 6px 14px rgba(70, 130, 180, 0.06), 0 1px 0 #e0eef9;
             border: 1px solid #dceaf5;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 3 / 4;
             display: flex;
             flex-direction: column;
             transition: box-shadow 0.2s ease, transform 0.15s;
@@ -279,9 +290,11 @@
             transform: translateY(-3px);
         }
 
+        /* ВНУТРЕННЕЕ ОКНО ПОД ФОТО ТОЖЕ 3:4 ВЕРТИКАЛЬНОЕ */
         .product-image {
             background: #f6fbfe;
-            flex: 1;
+            aspect-ratio: 3 / 4;
+            width: 100%;
             margin-bottom: 16px;
             border-radius: 18px;
             border: 1px solid #ddeeff;
@@ -294,7 +307,7 @@
             color: #4a80aa;
         }
         .product-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 6px;
             text-transform: uppercase;
@@ -302,7 +315,7 @@
             color: #1b4c6e;
         }
         .product-meta {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #5c7f9a;
             margin-bottom: 12px;
             font-weight: 400;
@@ -312,12 +325,12 @@
         .price-tiers-vertical {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            font-size: 0.85rem;
+            gap: 6px;
+            font-size: 0.8rem;
             font-weight: 500;
             background: #f2f9ff;
-            padding: 10px 12px;
-            border-radius: 20px;
+            padding: 8px 10px;
+            border-radius: 18px;
             border: 1px solid #d9eaf9;
             margin-top: 4px;
         }
@@ -326,8 +339,8 @@
             justify-content: space-between;
             align-items: baseline;
             border-bottom: 1px dashed #cde0ef;
-            padding-bottom: 6px;
-            font-size: 0.85rem;
+            padding-bottom: 5px;
+            font-size: 0.8rem;
         }
         .tier-item:last-child {
             border-bottom: none;
@@ -458,6 +471,15 @@
             letter-spacing: 0.8px;
             border-bottom: 1.5px solid #c7def2;
             padding-bottom: 5px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+        }
+        .contact-item:hover {
+            opacity: 0.7;
+            border-bottom-color: #8fb6d4;
         }
         .address {
             margin-top: 18px;
@@ -495,14 +517,15 @@
 <div class="page">
 
     <div class="header">
-        <div class="logo"> </span> Шопперы Оптом</div>
+        <div class="logo">Шопперы Оптом</div>
         <div class="header-actions">
-            <div class="premium-btn">+7 991 641 58 84</div> 
-            <div class="premium-btn">@aleshin_tg</div>
+            <a href="tel:+79916415884" class="premium-btn">+7 991 641 58 84</a> 
+            <a href="https://t.me/aleshin_tg" target="_blank" rel="noopener noreferrer" class="premium-btn">@aleshin_tg</a>
             <button class="theme-switch-btn" id="darkModeToggle" aria-label="Тёмная тема">🌙</button>
         </div>
     </div>
 
+    <!-- Hero 16:9 -->
     <div class="hero-premium"></div>
 
     <h2>Шопперы · база</h2>
@@ -639,12 +662,12 @@
 
     <div class="contact-block">
         <div class="contact-row">
-            <div class="contact-item">+7 991 641 58 84</div>
-            <div class="contact-item">@aleshin_tg</div>
+            <a href="tel:+79916415884" class="contact-item">+7 991 641 58 84</a>
+            <a href="https://t.me/aleshin_tg" target="_blank" rel="noopener noreferrer" class="contact-item">@aleshin_tg</a>
         </div>
         <div class="address">адрес предприятия · г. Москва, Нагорный проезд 7, стр. 1 · по предварительной записи</div>
     </div>
-    <div class="footer-note">PMR </div>
+    <div class="footer-note">PMR</div>
 </div>
 
 <script>
