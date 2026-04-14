@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Шопперы и футболки оптом | PMR</title>
+    <title>Шопперы и футболки оптом | shoppermsk77</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -25,7 +25,7 @@
             justify-content: center;
         }
 
-        /* ----- ТЁМНАЯ ТЕМА (чисто тёмная) ----- */
+        /* ----- ТЁМНАЯ ТЕМА ----- */
         body.dark {
             background: #0a0a0a;
             color: #e8e8e8;
@@ -55,8 +55,8 @@
             background: #1a1a1a;
             border-color: #333;
         }
-        body.dark .hero-premium::before {
-            color: #666;
+        body.dark .hero-premium img {
+            opacity: 0.8;
         }
         body.dark .product-card, body.dark .tshirt-card {
             background: #161616;
@@ -242,30 +242,21 @@
             background: #e4e4e4;
         }
 
-        /* Hero 16:9 */
+        /* Hero 16:9 с изображением */
         .hero-premium {
-            background: linear-gradient(135deg, #f8f8f8 0%, #eeeeee 100%);
             width: 100%;
             aspect-ratio: 16 / 9;
             margin: 0 0 56px 0;
             border-radius: 28px;
+            overflow: hidden;
             border: 1px solid #eaeaea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
-        body.dark .hero-premium {
-            background: linear-gradient(135deg, #1a1a1a, #111111);
-            border-color: #2a2a2a;
-        }
-        .hero-premium::before {
-            content: "premium collection";
-            font-size: 1.4rem;
-            font-weight: 400;
-            letter-spacing: 8px;
-            color: #999;
-            text-transform: uppercase;
-            opacity: 0.7;
+        .hero-premium img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* ----- СЕТКА ШОППЕРОВ — размеры 3:4, max-width: 280px ----- */
@@ -287,12 +278,46 @@
             max-width: 280px;
             width: 100%;
             margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
         }
         .product-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
             border-color: #d0d0d0;
         }
+        
+        /* Анимация появления — товары не исчезают после анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Задержки для карточек шопперов */
+        .product-card:nth-child(1) { animation-delay: 0.05s; }
+        .product-card:nth-child(2) { animation-delay: 0.10s; }
+        .product-card:nth-child(3) { animation-delay: 0.15s; }
+        .product-card:nth-child(4) { animation-delay: 0.20s; }
+        .product-card:nth-child(5) { animation-delay: 0.25s; }
+        .product-card:nth-child(6) { animation-delay: 0.30s; }
+        .product-card:nth-child(7) { animation-delay: 0.35s; }
+        
+        /* Задержки для карточек футболок */
+        .tshirt-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .tshirt-card:nth-child(1) { animation-delay: 0.40s; }
+        .tshirt-card:nth-child(2) { animation-delay: 0.45s; }
+
         .product-image {
             background: #fafafa;
             aspect-ratio: 3 / 4;
@@ -397,9 +422,15 @@
             justify-content: center;
             border-bottom: 1px solid #e8e8e8;
         }
-        .tshirt-image span {
-            font-size: 3rem;
-            color: #aaa;
+        .tshirt-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .tshirt-card:hover .tshirt-image img {
+            transform: scale(1.02);
         }
         .tshirt-title {
             font-size: 1rem;
@@ -480,15 +511,6 @@
             color: #333;
             border-left: 4px solid #ccc;
             padding-left: 14px;
-        }
-        .highlight-note {
-            margin-top: 32px;
-            font-size: 0.9rem;
-            padding: 12px 28px;
-            border-radius: 60px;
-            border: 1px solid #e0e0e0;
-            background: #fafafa;
-            display: inline-block;
         }
 
         /* Примеры 1:1 */
@@ -602,7 +624,6 @@
             .page { padding: 20px 20px 32px; }
             .product-grid, .tshirt-grid { grid-template-columns: 1fr; gap: 32px; }
             .examples-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .hero-premium::before { font-size: 1rem; letter-spacing: 4px; }
             .contact-row { gap: 28px; }
             .logo { font-size: 1.3rem; padding-right: 16px; }
         }
@@ -624,7 +645,10 @@
         </div>
     </div>
 
-    <div class="hero-premium"></div>
+    <!-- Hero 16:9 с изображением шапка.jpg -->
+    <div class="hero-premium">
+        <img src="шапка.jpg" alt="Шопперы оптом премиум качество">
+    </div>
 
     <!-- Шопперы — 7 карточек, размеры 3:4, с реальными изображениями -->
     <h2>Шопперы · база</h2>
@@ -701,18 +725,18 @@
         </div>
     </div>
 
-    <!-- Футболки -->
+    <!-- Футболки с изображениями -->
     <div class="tshirt-section">
         <h2>Футболки · опт</h2>
         <div class="tshirt-grid">
             <div class="tshirt-card">
-                <div class="tshirt-image"><span>◯</span></div>
+                <div class="tshirt-image"><img src="футболка-б.jpg" alt="Футболка белая"></div>
                 <div class="tshirt-title">Футболка Белая</div>
                 <div class="tshirt-meta">100% хлопок | S-XXL</div>
                 <div class="tshirt-price"><span class="price-label">Цена опт</span><span class="tshirt-price-value">490 ₽</span></div>
             </div>
             <div class="tshirt-card">
-                <div class="tshirt-image"><span>⬤</span></div>
+                <div class="tshirt-image"><img src="черная.jpg" alt="Футболка черная"></div>
                 <div class="tshirt-title">Футболка Черная</div>
                 <div class="tshirt-meta">100% хлопок | S-XXL</div>
                 <div class="tshirt-price"><span class="price-label">Цена опт</span><span class="tshirt-price-value">490 ₽</span></div>
@@ -720,7 +744,7 @@
         </div>
     </div>
 
-    <!-- DTF таблицы -->
+    <!-- DTF таблицы (убран отдельный блок highlight-note) -->
     <div class="services-section">
         <h2>DTF печать / брендирование</h2>
         <div class="table-group">
@@ -761,7 +785,6 @@
                 </table>
             </div>
         </div>
-        <div class="highlight-note">DTF рулон от 201 м — 550 ₽/м + бесплатная доставка по РФ</div>
     </div>
 
     <h2>Примеры брендирования</h2>
@@ -784,7 +807,7 @@
         </div>
     </div>
     
-    <div class="footer-note">PMR · оптовый отдел | все цены указаны с учётом НДС</div>
+    <div class="footer-note">shoppermsk77 · оптовый отдел | все цены указаны с учётом НДС</div>
 </div>
 
 <script>
