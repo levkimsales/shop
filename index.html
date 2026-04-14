@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>PMR BLVNK · шопперы оптом | бело-голубая премиум коллекция</title>
+    <title>Шопперы оптом </title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -13,7 +13,7 @@
         }
 
         body {
-            background: #f2f5fc;  /* мягкий голубовато-белый фон */
+            background: #f2f5fc;
             font-family: 'Inter', 'Manrope', sans-serif;
             color: #1a2c3e;
             line-height: 1.45;
@@ -22,7 +22,7 @@
             transition: background 0.25s ease, color 0.2s;
         }
 
-        /* ----- ТЁМНАЯ ТЕМА (премиум голубовато-темная) ----- */
+        /* ----- ТЁМНАЯ ТЕМА ----- */
         body.dark {
             background: #0b121f;
             color: #e3edf7;
@@ -70,13 +70,16 @@
         body.dark .product-title {
             color: #eef4fc;
         }
-        body.dark .price-tiers {
-            background: #0f1929;
-            border-color: #284a6a;
-            color: #b9d4f0;
+        body.dark .price-tiers-vertical {
+            background: #0f1a2c;
+            border-color: #2f5378;
         }
-        body.dark .tier span {
-            color: #bedbff;
+        body.dark .tier-label {
+            color: #aac9ec;
+        }
+        body.dark .tier-price {
+            background: #1a2d42;
+            color: #cce7ff;
         }
         body.dark .price-table th {
             color: #bfdcfc;
@@ -120,7 +123,7 @@
             border-color: #2c4b6e;
         }
 
-        /* главный контейнер страницы */
+        /* главный контейнер */
         .page {
             max-width: 1440px;
             margin: 0 auto;
@@ -149,7 +152,7 @@
             color: #c2e0ff;
         }
 
-        /* ----- header с кнопкой переключения темы ----- */
+        /* header с кнопкой переключения темы */
         .header {
             display: flex;
             flex-wrap: wrap;
@@ -189,10 +192,9 @@
             color: #1a5780;
             box-shadow: 0 1px 2px rgba(0,0,0,0.02);
             cursor: default;
-            transition: all 0.1s;
         }
 
-        /* кнопка тёмной темы (стильная) */
+        /* кнопка тёмной темы */
         .theme-switch-btn {
             background: #ecf3fa;
             border: none;
@@ -221,7 +223,7 @@
             background: #2f4e72;
         }
 
-        /* Hero секция с голубым оттенком */
+        /* Hero секция */
         .hero-premium {
             background: linear-gradient(135deg, #f0f7ff 0%, #e5f0fe 100%);
             width: 100%;
@@ -251,7 +253,7 @@
             color: #88b6dc;
         }
 
-        /* ----- ВЕРТИКАЛЬНЫЕ КАРТОЧКИ 3:4 (окна для шопперов) ----- */
+        /* ----- ВЕРТИКАЛЬНЫЕ КАРТОЧКИ 4:3 (высота больше ширины) ----- */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -259,14 +261,14 @@
             margin: 30px 0 40px;
         }
 
-        /* строго 3:4, вытянутые по вертикали, окна-карточки */
+        /* aspect-ratio 4:3 — вертикальные окна (высота = ширина * 1.333) */
         .product-card {
             background: #ffffff;
             border-radius: 24px;
             padding: 20px 18px 20px;
             box-shadow: 0 6px 14px rgba(70, 130, 180, 0.06), 0 1px 0 #e0eef9;
             border: 1px solid #dceaf5;
-            aspect-ratio: 3 / 4;
+            aspect-ratio: 4 / 3;
             display: flex;
             flex-direction: column;
             transition: box-shadow 0.2s ease, transform 0.15s;
@@ -292,21 +294,21 @@
             color: #4a80aa;
         }
         .product-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             color: #1b4c6e;
         }
         .product-meta {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #5c7f9a;
             margin-bottom: 12px;
             font-weight: 400;
         }
 
-        /* ЦЕНЫ В СТОЛБИК (вертикальное расположение) */
+        /* Цены в столбик */
         .price-tiers-vertical {
             display: flex;
             flex-direction: column;
@@ -314,10 +316,10 @@
             font-size: 0.85rem;
             font-weight: 500;
             background: #f2f9ff;
-            padding: 12px 12px;
+            padding: 10px 12px;
             border-radius: 20px;
             border: 1px solid #d9eaf9;
-            margin-top: 6px;
+            margin-top: 4px;
         }
         .tier-item {
             display: flex;
@@ -325,14 +327,14 @@
             align-items: baseline;
             border-bottom: 1px dashed #cde0ef;
             padding-bottom: 6px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         .tier-item:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
         .tier-label {
-            font-weight: 450;
+            font-weight: 500;
             color: #2a658b;
             letter-spacing: 0.3px;
         }
@@ -345,17 +347,9 @@
         }
         body.dark .tier-price {
             background: #1a2d42;
-            color: #cce7ff;
-        }
-        body.dark .price-tiers-vertical {
-            background: #0f1a2c;
-            border-color: #2f5378;
-        }
-        body.dark .tier-label {
-            color: #aac9ec;
         }
 
-        /* блоки с таблицами – аккуратные "окна" */
+        /* блоки с таблицами – окна */
         .card-table-wrapper {
             background: #ffffff;
             border-radius: 28px;
@@ -380,14 +374,14 @@
         .price-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
         .price-table th {
             text-align: left;
             padding: 12px 8px 8px 8px;
             font-weight: 550;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.5px;
             border-bottom: 2px solid #cde2f2;
             color: #205e8c;
         }
@@ -397,7 +391,7 @@
             font-weight: 400;
         }
         .table-caption {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 500;
             margin-bottom: 14px;
             letter-spacing: -0.2px;
@@ -408,8 +402,8 @@
         }
         .highlight-note {
             margin-top: 20px;
-            font-size: 0.95rem;
-            padding: 12px 24px;
+            font-size: 0.9rem;
+            padding: 10px 22px;
             border-radius: 40px;
             border: 1px solid #cde2f5;
             background: #f6fcff;
@@ -417,7 +411,7 @@
             font-weight: 450;
         }
 
-        /* Примеры 10 штук 1:1 (окна) */
+        /* Примеры 10 штук 1:1 */
         .examples-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -484,7 +478,6 @@
             color: #6d93b3;
         }
 
-        /* адаптивность */
         @media (max-width: 1000px) { .product-grid { grid-template-columns: repeat(3,1fr); } }
         @media (max-width: 700px) { 
             .product-grid { grid-template-columns: repeat(2,1fr); } 
@@ -501,20 +494,17 @@
 <body>
 <div class="page">
 
-    <!-- шапка + кнопка переключения тёмной темы -->
     <div class="header">
-        <div class="logo">PMR BLVNK <span>/</span> Шопперы Оптом</div>
+        <div class="logo"> </span> Шопперы Оптом</div>
         <div class="header-actions">
-            <div class="premium-btn">+7 ··· ··· ·· ··</div>
-            <div class="premium-btn">@telegram</div>
+            <div class="premium-btn">+7 991 641 58 84</div> 
+            <div class="premium-btn">@aleshin_tg</div>
             <button class="theme-switch-btn" id="darkModeToggle" aria-label="Тёмная тема">🌙</button>
         </div>
     </div>
 
-    <!-- hero с голубым акцентом -->
     <div class="hero-premium"></div>
 
-    <!-- 7 шопперов (вертикальные карточки 3:4) с ЦЕНАМИ В СТОЛБИК -->
     <h2>Шопперы · база</h2>
     <div class="product-grid">
         <!-- 1. Бежевый Саржа -->
@@ -596,13 +586,12 @@
         </div>
     </div>
 
-    <!-- ТРИ ТАБЛИЦЫ DTF в отдельных "окнах" -->
+    <!-- ТРИ ТАБЛИЦЫ DTF в окнах -->
     <div class="services-section">
         <h2>DTF печать / брендирование</h2>
         <div class="table-group">
-            <!-- Таблица 1: Нанесение DTF на носителе заказчика (окно) -->
             <div class="card-table-wrapper">
-                <div class="table-caption">📄 Нанесение DTF (на носителе заказчика)</div>
+                <div class="table-caption">Нанесение DTF (на носителе заказчика)</div>
                 <table class="price-table">
                     <thead><tr><th>Размер</th><th>1–300 шт</th><th>300–500 шт</th><th>500–1000 шт</th></tr></thead>
                     <tbody>
@@ -616,9 +605,8 @@
                 </table>
             </div>
 
-            <!-- Таблица 2: DTF рулоны оптом (окно) -->
             <div class="card-table-wrapper">
-                <div class="table-caption">📜 DTF-рулоны (термотрансферы оптом)</div>
+                <div class="table-caption">DTF-рулоны (термотрансферы оптом)</div>
                 <table class="price-table">
                     <thead><tr><th>Объём</th><th>1–50 м</th><th>51–100 м</th><th>101–200 м</th><th>от 201 м</th></tr></thead>
                     <tbody>
@@ -627,9 +615,8 @@
                 </table>
             </div>
 
-            <!-- Таблица 3: Перенос DTF печати (окно) -->
             <div class="card-table-wrapper">
-                <div class="table-caption">🔄 Перенос DTF печати</div>
+                <div class="table-caption">Перенос DTF печати</div>
                 <table class="price-table">
                     <thead><tr><th>Тип переноса</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>от 1000</th></tr></thead>
                     <tbody>
@@ -639,10 +626,9 @@
                 </table>
             </div>
         </div>
-        <div class="highlight-note">✨ DTF рулон от 201 м — 550 ₽/м + бесплатная доставка по РФ</div>
+        <div class="highlight-note">DTF рулон от 201 м — 550 ₽/м + бесплатная доставка по РФ</div>
     </div>
 
-    <!-- 10 окон примеров 1:1 -->
     <h2>Примеры брендирования</h2>
     <div class="examples-grid">
         <div class="example-square">▤</div><div class="example-square">◈</div><div class="example-square">◊</div>
@@ -651,21 +637,18 @@
         <div class="example-square">◨</div>
     </div>
 
-    <!-- контакты + адрес -->
     <div class="contact-block">
         <div class="contact-row">
-            <div class="contact-item">+7 900 000 00 00</div>
-            <div class="contact-item">@pmr_blvnk_wholesale</div>
+            <div class="contact-item">+7 991 641 58 84</div>
+            <div class="contact-item">@aleshin_tg</div>
         </div>
-        <div class="address">адрес предприятия · г. Москва, Пресненская наб., стр. 8 · шоурум по предварительной записи</div>
+        <div class="address">адрес предприятия · г. Москва, Нагорный проезд 7, стр. 1 · по предварительной записи</div>
     </div>
-    <div class="footer-note">PMR BLVNK · премиум оптовый отдел | все цены указаны с учётом НДС</div>
+    <div class="footer-note">PMR </div>
 </div>
 
-<!-- скрипт для ручного переключения тёмной/светлой темы + автоопределение -->
 <script>
     (function() {
-        // определяем, была ли сохранена тема в localStorage
         const storedTheme = localStorage.getItem('pmr_theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         let isDark = false;
@@ -697,7 +680,6 @@
                     toggleBtn.textContent = '☀️';
                 }
             });
-            // иконка в соответствии с текущим состоянием
             if (document.body.classList.contains('dark')) {
                 toggleBtn.textContent = '☀️';
             } else {
@@ -705,7 +687,6 @@
             }
         }
 
-        // слушатель системной темы, если пользователь явно не выбрал ручную
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             const manual = localStorage.getItem('pmr_theme');
             if (!manual) {
