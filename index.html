@@ -13,7 +13,7 @@
         }
 
         body {
-            background: #f5f5f7;
+            background: #ffffff;
             font-family: 'Inter', 'Manrope', sans-serif;
             color: #1a1a1a;
             line-height: 1.45;
@@ -126,8 +126,8 @@
             background: #ffffff;
             border-radius: 28px;
             padding: 24px 20px 40px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+            border: 1px solid #efefef;
             transition: background 0.2s, border 0.2s;
         }
 
@@ -238,7 +238,7 @@
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid #eaeaea;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
         .hero-premium img {
             width: 100%;
@@ -262,7 +262,7 @@
             overflow: hidden;
             border: 1px solid #e8e8e8;
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
             max-width: 100%;
             width: 100%;
             margin: 0 auto;
@@ -272,7 +272,7 @@
         }
         .product-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
             border-color: #d0d0d0;
         }
         
@@ -291,17 +291,14 @@
         .product-card:nth-child(2) { animation-delay: 0.10s; }
         .product-card:nth-child(3) { animation-delay: 0.15s; }
         .product-card:nth-child(4) { animation-delay: 0.20s; }
-        .product-card:nth-child(5) { animation-delay: 0.25s; }
-        .product-card:nth-child(6) { animation-delay: 0.30s; }
-        .product-card:nth-child(7) { animation-delay: 0.35s; }
         
         .tshirt-card {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.5s ease forwards;
         }
-        .tshirt-card:nth-child(1) { animation-delay: 0.40s; }
-        .tshirt-card:nth-child(2) { animation-delay: 0.45s; }
+        .tshirt-card:nth-child(1) { animation-delay: 0.25s; }
+        .tshirt-card:nth-child(2) { animation-delay: 0.30s; }
 
         .product-image {
             background: #fafafa;
@@ -389,14 +386,14 @@
             overflow: hidden;
             border: 1px solid #e8e8e8;
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
             max-width: 100%;
             width: 100%;
             margin: 0 auto;
         }
         .tshirt-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
             border-color: #d0d0d0;
         }
         .tshirt-image {
@@ -550,7 +547,7 @@
             margin-top: 24px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             border: 1px solid #e8e8e8;
             height: 240px;
         }
@@ -569,7 +566,7 @@
             color: #aaa;
         }
 
-        /* ========== ПЛАНШЕТЫ И ДЕСКТОП (адаптация для больших экранов) ========== */
+        /* ========== ПЛАНШЕТЫ И ДЕСКТОП ========== */
         @media (min-width: 550px) {
             body {
                 padding: 24px 20px;
@@ -598,11 +595,11 @@
                 padding: 36px 40px 52px;
             }
             .product-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 28px;
             }
             .tshirt-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 28px;
             }
             .logo {
@@ -714,7 +711,7 @@
         <img src="шапка.jpg" alt="Шопперы оптом премиум качество">
     </div>
 
-    <!-- Шопперы -->
+    <!-- Шопперы (4 позиции, порядок цен: от большего тиража к меньшему) -->
     <h2>Шопперы · база</h2>
     <div class="product-grid">
         <div class="product-card">
@@ -722,9 +719,9 @@
             <div class="product-title">Бежевый / Саржа</div>
             <div class="product-meta">40×34 см | 140 г/м²</div>
             <div class="price-tiers-vertical">
-                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">155 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">145 ₽</span></div>
                 <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">135 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">145 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">155 ₽</span></div>
             </div>
         </div>
         <div class="product-card">
@@ -732,9 +729,9 @@
             <div class="product-title">Белый / Саржа</div>
             <div class="product-meta">40×34 см | 140 г/м²</div>
             <div class="price-tiers-vertical">
-                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">180 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">160 ₽</span></div>
                 <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">155 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">160 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">180 ₽</span></div>
             </div>
         </div>
         <div class="product-card">
@@ -742,9 +739,9 @@
             <div class="product-title">Черный / Саржа</div>
             <div class="product-meta">40×34 см | 150 г/м²</div>
             <div class="price-tiers-vertical">
-                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">190 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">160 ₽</span></div>
                 <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">155 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">160 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">190 ₽</span></div>
             </div>
         </div>
         <div class="product-card">
@@ -752,39 +749,9 @@
             <div class="product-title">Синий / Саржа</div>
             <div class="product-meta">40×34 см | плотный</div>
             <div class="price-tiers-vertical">
-                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">190 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">170 ₽</span></div>
                 <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">165 ₽</span></div>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image"><img src="темносиний.jpg" alt="Шоппер темно-синий"></div>
-            <div class="product-title">Темно-синий / Саржа</div>
-            <div class="product-meta">40×34 см | премиум</div>
-            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">170 ₽</span></div>
                 <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">190 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">185 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">180 ₽</span></div>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image"><img src="двунитка.jpg" alt="Шоппер серый двунитка"></div>
-            <div class="product-title">Серый Двунитка</div>
-            <div class="product-meta">40×34 см | усиленный</div>
-            <div class="price-tiers-vertical">
-                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">100 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">90 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">80 ₽</span></div>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image"><img src="диагональ.jpg" alt="Шоппер бежевый диагональ"></div>
-            <div class="product-title">Бежевый Диагональ</div>
-            <div class="product-meta">40×34 см | премиум ткань</div>
-            <div class="price-tiers-vertical">
-                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">130 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">125 ₽</span></div>
-                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">115 ₽</span></div>
             </div>
         </div>
     </div>
@@ -815,14 +782,16 @@
             <div class="card-table-wrapper">
                 <div class="table-caption">Нанесение DTF (на носителе заказчика)</div>
                 <table class="price-table">
-                    <thead><tr><th>Размер</th><th>1–300 шт</th><th>300–500 шт</th><th>500–1000 шт</th></tr></thead>
+                    <thead>
+                        <tr><th>Размер</th><th>500–1000 шт</th><th>300–500 шт</th><th>1–300 шт</th></tr>
+                    </thead>
                     <tbody>
-                        <tr><td>10×10 см</td><td>60 ₽</td><td>50 ₽</td><td>40 ₽</td></tr>
-                        <tr><td>15×15 см</td><td>80 ₽</td><td>75 ₽</td><td>70 ₽</td></tr>
-                        <tr><td>20×20 см</td><td>100 ₽</td><td>90 ₽</td><td>80 ₽</td></tr>
-                        <tr><td>25×25 см</td><td>120 ₽</td><td>100 ₽</td><td>95 ₽</td></tr>
-                        <tr><td>А4 (21×30)</td><td>150 ₽</td><td>140 ₽</td><td>130 ₽</td></tr>
-                        <tr><td>А3 (30×42)</td><td>250 ₽</td><td>230 ₽</td><td>220 ₽</td></tr>
+                        <tr><td>10×10 см</td><td>40 ₽</td><td>50 ₽</td><td>60 ₽</td></tr>
+                        <tr><td>15×15 см</td><td>70 ₽</td><td>75 ₽</td><td>80 ₽</td></tr>
+                        <tr><td>20×20 см</td><td>80 ₽</td><td>90 ₽</td><td>100 ₽</td></tr>
+                        <tr><td>25×25 см</td><td>95 ₽</td><td>100 ₽</td><td>120 ₽</td></tr>
+                        <tr><td>А4 (21×30)</td><td>130 ₽</td><td>140 ₽</td><td>150 ₽</td></tr>
+                        <tr><td>А3 (30×42)</td><td>220 ₽</td><td>230 ₽</td><td>250 ₽</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -841,10 +810,12 @@
             <div class="card-table-wrapper">
                 <div class="table-caption">Перенос DTF печати</div>
                 <table class="price-table">
-                    <thead><tr><th>Тип переноса</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>от 1000</th></tr></thead>
+                    <thead>
+                        <tr><th>Тип переноса</th><th>500–1000</th><th>300–500</th><th>1–300</th><th>от 1000</th></tr>
+                    </thead>
                     <tbody>
-                        <tr><td>Простая ровная поверхность</td><td>50 ₽</td><td>40 ₽</td><td>35 ₽</td><td>30 ₽</td></tr>
-                        <tr><td>Сложный перенос (нестанд.)</td><td>100 ₽</td><td>80 ₽</td><td>70 ₽</td><td>60 ₽</td></tr>
+                        <tr><td>Простая ровная поверхность</td><td>35 ₽</td><td>40 ₽</td><td>50 ₽</td><td>30 ₽</td></tr>
+                        <tr><td>Сложный перенос (нестанд.)</td><td>70 ₽</td><td>80 ₽</td><td>100 ₽</td><td>60 ₽</td></tr>
                     </tbody>
                 </table>
             </div>
